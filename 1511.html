@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPB 1511 2022</title>
+    <style>
+        .kolom{
+            float: left;
+            width: 25%;
+            padding: 10px;
+        }
+        .kolom img{
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        .kolom img:hover{
+            opacity: 1;
+        }
+        .baris::after{
+            content: ;
+            display: table;
+            clear: both;
+        }
+        .container{
+            position: relative;
+            display: none;
+        }
+        .tutup{
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            font-size: 35px;
+        }
+        #TulisanGambar{
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="baris">
+        <div style="text-align:center">
+            <h2>Gallery</h2>
+        </div>  
+        <div class="baris">
+            <div class="kolom">
+                <img src="image/baimmm.jpg" alt="gambar motor 1" style="width:100%" onclick="myFunction(this);">
+            </div>
+            <div class="kolom">
+                <img src="image/h2rr.jpg" alt="gambar motor 2" style="width:100%" onclick="myFunction(this);">
+            </div>
+            <div class="kolom">
+                <img src="image/12.png" alt="gambar motor 3" style="width:100%" onclick="myFunction(this);">
+            </div>
+        </div>
+        <div class="container">
+            <span onclick="this.parentElement.style.display='none'" class="tutup">&times;</span>
+            <img id="tampilGambar" style="width:100%">
+            <div id="TulisanGambar"></div>
+        </div>
+    </div>
+
+    <script>
+        function myFunction(gbr) {
+            var expandGbr = document.getElementById("tampilGambar");
+            var imgText = document.getElementById("TulisanGambar");
+            expandGbr.src = gbr.src;
+            imgText.innerHTML = gbr.alt;
+            expandGbr.parentElement.style.display = "block";
+        }
+    </script>
+</body>
+</html>

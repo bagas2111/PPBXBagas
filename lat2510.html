@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        input[type="text"]{
+            padding: 8px;
+            background: #ccffcc;
+            font-size: 16px
+            font-family: tahoma;
+            margin: 2px 0px;
+            border-radius: 10px;
+            width: 90%;
+        }
+        textarea{
+            padding: 8px;
+            background: #ccffcc;
+            font-size: 16px
+            font-family: tahoma;
+            margin: 2px 0px;
+            border-radius: 10px;
+            width: 90%;
+        }
+        input[type="submit"]{
+            padding: 8px;
+            width: 200px;
+            background: #a6d4ff;
+            color: rgb(244, 246, 250);
+            font-weight: bold;
+            border-radius: 10px;
+            border: 0px;
+            margin: 15px;
+            
+        }
+        label{
+            color: red;
+            font-weight: bold;
+        }
+        h2{
+            color: blue;
+            text-align: center;
+        }
+        .daftar{
+            width: 400px;
+            /*border: 2px solid gold;*/
+            margin: auto;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        body{
+            background-color: #f8c471;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Daftar Pelanggan</h2>
+    <div class="daftar">
+        <form action="#" method="post" onsubmit="validasi()">
+               <label>nama</label>
+               <input type="text" name="nama" id="nama">
+               <label>alamat</label>
+               <textarea name="alamat" id="alamat"></textarea>
+               <label>kota</label>
+               <input type="text" name="kota" id="kota">
+               <input type="submit" value="KIRIM" name="kirim">
+        </form>    
+    </div>
+    
+</body>
+<script type="text/javascript">
+    function validasi(){
+        var nama = document.getElementById('nama').value;
+        var alamat = document.getElementById('alamat').value;
+        var kota = document.getElementById('kota').value;
+
+        if (nama !== "" && alamat !== "" && kota !== "") {
+            return true;
+        }else{
+            alert('anda belum lengkap mengisi data!!!');
+        }
+    }
+</script>
+</html>
